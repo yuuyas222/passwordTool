@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='sample.css'>
+</head>
+<body>
+    <div>
+        <header>
+            <div class="menu">Menu</div>
+            <div class="title">タイトル</div>
+            <div class="icons">icon</div>
+        </header>
+    </div>
+    <div class="main">
+        <h5>パスワード生成（パスワード作成）ツール</h5>
+        <p>お好みのパスワードを生成（自動作成）することができるツールです。<br>文字数は2〜40文字まで、個数は最大1000個まで生成できます。</p>
+        <table>
+            <tr>
+                <td class="select">強度</td>
+                <td>
+                    <input type="radio" name="strengthSelects" value="カスタム" class="select_id" onclick="strongCheck()"><a>カスタム</a>
+                    <input type="radio" name="strengthSelects" value="強力" class="select_id" onclick="strongCheck()"><a>強力</a>
+                    <input type="radio" name="strengthSelects" value="最強" class="select_id" onclick="strongCheck()"><a>最強</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="select">文字</td>
+                <td>
+                    <input id="select_id_1" type="checkbox" name="others" value="文字省く" disabled="disabled"><a>英字（大文字）</a>
+                    <input id="select_id_2" type="checkbox" name="others" value="2回使わない" disabled="disabled"><a>英字（小文字）</a>
+                    <input id="select_id_3" type="checkbox" name="others" value="2回使わない" disabled="disabled"><a>数字</a><br>
+                    <input id="select_id_4" type="radio" name="others" value="2回使わない" disabled="disabled" onclick="symbolDisplay()"><a>記号無し</a>
+                    <input id="select_id_5" type="radio" name="others" value="2回使わない" disabled="disabled" onclick="symbolDisplay()"><a>記号あり</a>
+                    <div class="strong_none">
+                        <input id="select_id_6" class="checks" type="checkbox" name="others" value="-" disabled="disabled"><a>- （ハイフン）</a>
+                        <input id="select_id_7" class="checks" type="checkbox" name="others" value="_" disabled="disabled"><a>_ （アンダーバー）</a>
+                        <input id="select_id_8" class="checks" type="checkbox" name="others" value="/" disabled="disabled"><a>/ （スラッシュ）</a>
+                        <input id="select_id_9" class="checks" type="checkbox" name="others" value="*" disabled="disabled"><a>*（アスタリスク）</a>
+                        <input id="select_id_10" class="checks" type="checkbox" name="others" value="+" disabled="disabled"><a>+ （プラス）</a><br>
+                        <input id="select_id_11" class="checks" type="checkbox" name="others" value="." disabled="disabled">.（ドット）<a></a>
+                        <input id="select_id_12" class="checks" type="checkbox" name="others" value="," disabled="disabled"><a>,（カンマ）</a>
+                        <input id="select_id_13" class="checks" type="checkbox" name="others" value="!" disabled="disabled"><a>！ （エクスクラメーション）</a><br>
+                        <input id="select_id_14" class="checks" type="checkbox" name="others" value="#" disabled="disabled">#（シャープ）<a></a>
+                        <input id="select_id_15" class="checks" type="checkbox" name="others" value="$" disabled="disabled"><a>$（ドル）</a>
+                        <input id="select_id_16" class="checks" type="checkbox" name="others" value="%" disabled="disabled"><a>% （パーセント）</a><br>
+                        <input id="select_id_17" class="checks" type="checkbox" name="others" value="&" disabled="disabled"><a>& （アンド）</a>
+                        <input id="select_id_18" class="checks" type="checkbox" name="others" value="(" disabled="disabled"><a>( （左かっこ）</a>
+                        <input id="select_id_19" class="checks" type="checkbox" name="others" value=")" disabled="disabled"><a>) （右かっこ）</a><br>
+                        <input id="select_id_20" class="checks" type="checkbox" name="others" value="~" disabled="disabled"><a>~ （チルダ）</a>
+                        <input id="select_id_21" class="checks" type="checkbox" name="others" value="|" disabled="disabled"><a>| （パイプ）</a>
+                    </div>
+                </td>
+            </tr>
+            <tr>
+                <td class="select">文字数</td>
+                <td>
+                    <input type="radio" name="passwordNam" value="カスタム"><input id="wordCustomNumber" type="number" class="type_number" name="passwordNam"><a>文字</a>
+                    <input type="radio" name="passwordNam" value="8文字"><a>8文字</a>
+                    <input type="radio" name="passwordNam" value="12文字"><a>12文字</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="select">個数</td>
+                <td>
+                    <input type="radio" name="quantity" value="カスタム"><input type="number" class="type_number" name="quantity"><a>個</a>
+                    <input type="radio" name="quantity" value="10個"><a>10個</a>
+                    <input type="radio" name="quantity" value="50個"><a>50個</a>
+                </td>
+            </tr>
+            <tr>
+                <td class="select">その他</td>
+                <td>
+                    <input type="checkbox" name="others" value="文字省く"><a>似通った英数字は省く</a><br>
+                    <input type="checkbox" name="others" value="2回使わない"><a>8文字以内の場合、同じ文字は2回以上使わない</a>
+                </td>
+            </tr>
+        </table>
+        <div class="button">
+            <input type="button" value="生成する" onclick="PasswordMake()">
+        </div>
+        <div id="area" class="container">
+        
+        </div>
+    </div>
+<script src='main.js'></script>
+</body>
+</html>
